@@ -27,6 +27,10 @@ async def filter_messages(message: types.Message):
             await message.delete()
             await message.answer(f'@{message.from_user.username} Ругаться нельзя!')
 
+@dp.message_handler(commands=["!start"])
+async def filter_messages(message: types.Message):
+    await message.answer('Немезида на связе')
+
 
 # run long-polling
 if __name__ == "__main__":
